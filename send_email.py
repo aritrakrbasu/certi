@@ -8,7 +8,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 SenderAddress ="aritrabasu71@gmail.com"
-password = "runabasu71"
+password = "aritrabasu71"
 
 e = pd.read_excel("emails.xlsx",engine='openpyxl')
 emails = e['Emails'].values
@@ -26,7 +26,7 @@ index = 0
 for email in emails:
     msg = MIMEMultipart()
     msg['From'] = "aritrabasu71@gmail.com"
-    msg['Subject'] = "Certificate of appreciation for Innovision 2021 presented to you by CSE , RCCIIT "
+    msg['Subject'] = "Invitation for Apracchana 2022 presented to you by 3rd years , RCCIIT "
     msg['To'] = email
 
     body  = '''
@@ -34,20 +34,17 @@ for email in emails:
 <body>
 <b> Dear '''+names[index]+''', <br>
 <br>
-Warm Greetings from the Innovision team! </b>
+Warm Greetings from the Apracchana team! </b>
 <br>
-<p>We are grateful for actively organizing this event and making this a great success . We have attached your appreciation certificate with this mail. <br> 
-Please do provide us with your valuable feedback on your experience using the attached Google form, or you can reply to this email . </p>
-<br>
-<br>
-<b> Feedback Link : https://forms.gle/uPX42nTdWpaEQZNK7 </b>
+<p>"The two hardest things to say in life are hello for the first time and goodbye for the last."
+
+It's really upsetting to see you leave but we wish you lots of happiness and success as you begin new chapters in your lives. You have been a great mentor and outstanding friends to us since our freshmen years. Before wishing you Au Revoir, we invite you to join us in  ”Apracchana”, the Farewell Party ’22 on 3rd June 2022, Friday in the Institute Auditorium. </p>
 <br>
 <br>
-<br>
-<strong> Regards, <br>
+<strong>
 <font color="#e5012e"> 
-<i>Team Innovision 2021 <br>
-Presented by CSE , RCCIIT <br>
+<i>Location : College Auditorium <br>
+Dress Code : Ethnic <br>
 </i></font></strong> '''
     
 
@@ -56,7 +53,7 @@ Presented by CSE , RCCIIT <br>
     folders = ["organizers"]
 
     for folder in folders:
-        filename = names[index]+".png"
+        filename = "invitation.png"
         filepath ="./"+folder+"/"+filename
         file = Path(filepath)
         if file.is_file():
